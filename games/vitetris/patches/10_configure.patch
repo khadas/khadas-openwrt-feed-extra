@@ -1,0 +1,12 @@
+--- a/configure	2019-03-11 00:46:22.000000000 +0900
++++ b/configure	2020-06-12 16:37:18.306576010 +0900
+@@ -95,6 +95,9 @@ Default features:"
+ 	CC)
+ 		export CC=${arg#CC=}
+ 		continue ;;
++	STRIP)
++		export STRIP=${arg#STRIP=}
++		continue ;;
+ 	CFLAGS)
+ 		export CFLAGS=${arg#CFLAGS=}
+ 		continue ;;

@@ -1,0 +1,9 @@
+diff -pruN zstd-1.4.4/build/cmake/contrib/CMakeLists.txt zstd-1.4.4.1/build/cmake/contrib/CMakeLists.txt
+--- zstd-1.4.4/build/cmake/contrib/CMakeLists.txt	2019-11-05 02:54:32.000000000 +0900
++++ zstd-1.4.4.1/build/cmake/contrib/CMakeLists.txt	2020-03-11 15:43:23.210480282 +0900
+@@ -10,4 +10,4 @@
+ project(contrib)
+ 
+ add_subdirectory(pzstd)
+-add_subdirectory(gen_html)
++#add_subdirectory(gen_html)

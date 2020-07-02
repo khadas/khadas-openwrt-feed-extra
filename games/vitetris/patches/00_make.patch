@@ -1,0 +1,12 @@
+--- a/Makefile	2019-03-11 00:46:22.000000000 +0900
++++ b/Makefile	2020-06-12 16:33:42.471595258 +0900
+@@ -5,7 +5,8 @@ PROGNAME = tetris$(EXE)
+ # Uncomment to change the default.  (Only used in Unix-like systems.)
+ #HISCORE_FILENAME = /var/games/vitetris-hiscores
+ 
+-INSTALL = install -oroot -groot
++#INSTALL = install -oroot -groot
++INSTALL = install
+ 
+ default: build
+ 	@echo Done.

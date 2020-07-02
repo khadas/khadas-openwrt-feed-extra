@@ -1,0 +1,21 @@
+
+lrwxrwxrwx 1 master master     17 Dec 23 10:49 brcmfmac43430-sdio.bin -> fw_bcm43438a1.bin
+-rw-rw-r-- 1 master master   1003 Dec 23 10:47 brcmfmac43430-sdio.txt
+lrwxrwxrwx 1 master master     20 Dec 23 10:49 brcmfmac43455-sdio.bin -> fw_bcm43455c0_ag.bin
+-rw-rw-r-- 1 master master   1644 Dec 23 10:47 brcmfmac43455-sdio.txt
+-rw-rw-r-- 1 master master 526383 Dec 23 10:47 brcmfmac4356-sdio.bin
+-rw-rw-r-- 1 master master   2844 Dec 23 10:47 brcmfmac4356-sdio.txt
+lrwxrwxrwx 1 master master     19 Dec 23 10:49 brcmfmac4359-sdio.bin -> fw_bcm4359c0_ag.bin
+lrwxrwxrwx 1 master master     21 Dec 23 10:49 brcmfmac4359-sdio.khadas,vim2.txt -> brcmfmac4359-sdio.txt
+lrwxrwxrwx 1 master master     21 Dec 23 10:51 brcmfmac4359-sdio.khadas,vim3.txt -> brcmfmac4359-sdio.txt
+lrwxrwxrwx 1 master master     18 Dec 23 10:49 brcmfmac4359-sdio.txt -> nvram_ap6359sa.txt
+-rw-rw-r-- 1 master master    184 Dec 23 10:47 config.txt
+-rw-rw-r-- 1 master master 374608 Dec 23 10:47 fw_bcm43438a1.bin
+-rw-rw-r-- 1 master master 483181 Dec 23 10:47 fw_bcm43455c0_ag.bin
+-rw-rw-r-- 1 master master 595758 Dec 23 10:47 fw_bcm4359c0_ag.bin
+-rw-rw-r-- 1 master master   1003 Dec 23 10:47 nvram_ap6212a.txt
+-rw-rw-r-- 1 master master    956 Dec 23 10:47 nvram_ap6212.txt
+-rw-rw-r-- 1 master master   1644 Dec 23 10:47 nvram_ap6255.txt
+-rw-rw-r-- 1 master master   2844 Dec 23 10:47 nvram_ap6356.txt
+-rw-rw-r-- 1 master master   5861 Dec 23 10:47 nvram_ap6359sa.txt
+-rw-rw-r-- 1 master master   5861 Dec 23 10:47 nvram_ap6398s.txt

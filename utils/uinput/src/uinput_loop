@@ -1,0 +1,10 @@
+#!/bin/sh
+
+## hyphop ##
+while [ "1" ] ; do
+    echo "key 108" 
+    sleep 1
+    echo "key 103"
+    sleep 1
+done | ./uinput - 0
+

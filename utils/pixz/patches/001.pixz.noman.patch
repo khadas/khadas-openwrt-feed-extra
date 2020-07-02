@@ -1,0 +1,24 @@
+diff -pruN pixz-1.0.6/configure.ac pixz-1.0.6.1/configure.ac
+--- pixz-1.0.6/configure.ac	2015-11-06 06:57:08.000000000 +0900
++++ pixz-1.0.6.1/configure.ac	2020-02-26 19:24:03.381105244 +0900
+@@ -13,20 +13,6 @@ AM_INIT_AUTOMAKE([foreign])
+ # Checks for programs.
+ AC_PROG_CC_STDC
+ 
+-# Check for a2x only if the man page is missing, i.e. we are building from git. The release tarballs
+-# are set up to include the man pages. This way, only people creating tarballs via `make dist` and
+-# people building from git need a2x as a dependency.
+-AC_CHECK_FILE(
+-  [src/pixz.1],
+-  [],
+-  [
+-    AC_CHECK_PROG(A2X, a2x, a2x, [])
+-    if test "x$A2X" = x ; then
+-      AC_MSG_ERROR([AsciiDoc not found, not able to generate the man page.])
+-    fi
+-  ]
+-)
+-
+ # Checks for libraries.
+ AC_CHECK_LIB([m], [ceil])
+ AX_PTHREAD
