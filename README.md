@@ -16,7 +16,7 @@
 + zstd
 + vitetris
 + megatools
-+ ...
++ spiupdate
 
 ## USAGE
 
