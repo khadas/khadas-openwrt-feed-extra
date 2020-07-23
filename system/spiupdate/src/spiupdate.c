@@ -65,7 +65,7 @@ while( memset( buf, 0, bs) && ( read(0, buf, bs) > 0 ) )
     if ( !( total % rate)  ) \
     fprintf(stdout, "%03d %04d %04d %04d %04d\r", 100*total/blocks, \
 	total, blocks, rewrited, same);
-
+    fflush(stdout);
 }
 
     fprintf(stdout, "\n" );
