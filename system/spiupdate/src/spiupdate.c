@@ -27,10 +27,13 @@ int rewrited=0;
 int same=0;
 int total=0;
 
+char* nl = "\r";
+
 // gzip -dc VIM2.krescue.spi.img.gz | RATE=10 spiupdate /dev/mtdblock0  ; echo $?
 
 int main(int argc, char *argv[]) {
 
+    if ( getenv("NL") ) nl="\n";
     const char* SIZE = getenv("SIZE");
     int size=bs*bs;
     const char* RATE = getenv("RATE");
@@ -63,8 +66,8 @@ while( memset( buf, 0, bs) && ( read(0, buf, bs) > 0 ) )
 
     total++;
     if ( !( total % rate)  ) \
-    fprintf(stdout, "%03d %04d %04d %04d %04d\r", 100*total/blocks, \
-	total, blocks, rewrited, same);
+    fprintf(stdout, "%03d %04d %04d %04d %04d%s", 100*total/blocks, \
+	total, blocks, rewrited, same, nl);
     fflush(stdout);
 }
 

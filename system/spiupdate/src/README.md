@@ -5,16 +5,23 @@ rewrite blocks only is diff
 
 ## USAGE
 
-    spiupdate OUT < INPUT_image
+    [VARS] spiupdate OUT < INPUT_image
 
-OUT is /dev/mtdblock0
+    gzip -dc VIM2.krescue.spi.img.gz | RATE=10 spiupdate /dev/mtdblock0  ; echo $?
+
+## ARGS and VARS
+
++ NL   - progress new line
++ RATE - output rate
++ SIZE - output size
++ OUT  - /dev/mtdblock0
 
 ## GET && BUILD
 
 ## AUTHOR
 
-    ## hyphop ##
+\## hyphop ##
 
 ## LICENSE
-    
+
     cat ./LICENSE
