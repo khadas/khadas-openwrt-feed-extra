@@ -31,9 +31,14 @@ char* nl = "\r";
 
 // gzip -dc VIM2.krescue.spi.img.gz | RATE=10 spiupdate /dev/mtdblock0  ; echo $?
 
+#define PROGRESS "%03d %04d %04d %04d %04d%s"
+
 int main(int argc, char *argv[]) {
 
     if ( getenv("NL") ) nl="\n";
+    const char* progress = getenv("PROGRESS_FORMAT");
+    if (!progress) progress=PROGRESS;
+
     const char* SIZE = getenv("SIZE");
     int size=bs*bs;
     const char* RATE = getenv("RATE");
@@ -41,8 +46,9 @@ int main(int argc, char *argv[]) {
     if (SIZE) size=atoi(SIZE);
     int blocks = size / bs;
     fprintf(stderr,"[i] spiupdate => %s (%d - %d)\n", argv[1], size, blocks);
-    fprintf(stdout, "###  all blks wrtd same\n");
-    
+    if (!getenv("PROGRESS_NO_HEADER"))
+	fprintf(stdout, "###  all blks wrtd same\n");
+
     out = open(argv[1], O_RDWR);
     if ( out < 0) return 1;
 
@@ -66,7 +72,7 @@ while( memset( buf, 0, bs) && ( read(0, buf, bs) > 0 ) )
 
     total++;
     if ( !( total % rate)  ) \
-    fprintf(stdout, "%03d %04d %04d %04d %04d%s", 100*total/blocks, \
+    fprintf(stdout, progress , 100*total/blocks, \
 	total, blocks, rewrited, same, nl);
     fflush(stdout);
 }
