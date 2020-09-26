@@ -22,7 +22,7 @@ rewrite blocks only is diff
 
     dd if=/dev/zero bs=4096 count=4096 > /tmp/spi_flash
     dd if=/dev/zero bs=4096 count=4096 | RATE=16 ./spiupdate /tmp/spi_flash ; echo $?
-    dd if=/dev/zero bs=4096 count=4096 | RATE=16 NL=1 PROGRESS_FORMAT="%03d " PROGRESS_NO_HEADER=1./spiupdate /tmp/spi_flash ; echo $?
+    dd if=/dev/zero bs=4096 count=4096 | RATE=16 NL=1 PROGRESS_FORMAT="%03d " PROGRESS_NO_HEADER=1 ./spiupdate /tmp/spi_flash ; echo $?
 
 ## GET && BUILD
 
