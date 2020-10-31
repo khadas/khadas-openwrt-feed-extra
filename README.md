@@ -17,6 +17,7 @@
 + vitetris
 + megatools
 + spiupdate
++ mpd-custom
 
 ## USAGE
 
