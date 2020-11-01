@@ -74,7 +74,7 @@ endef
 define Package/mpd-custom
 $(call Package/mpd/Default)
   TITLE+= (custom)
-  DEPENDS+= +libmad +libmpg123 +libopus +libogg +libvorbis
+  DEPENDS+= +libmad +libopus +libvorbis
   PROVIDES:=mpd
   VARIANT:=custom
 endef
