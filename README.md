@@ -18,6 +18,7 @@
 + megatools
 + spiupdate
 + mpd-custom
++ sox-custom
 
 ## USAGE
 
