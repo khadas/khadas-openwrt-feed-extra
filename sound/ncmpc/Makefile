@@ -28,10 +28,7 @@ define Package/ncmpc
 endef
 
 define Package/ncmpc/description
-	MPD is a music player supporting flac, mp3 and ogg files.
-	It is typically controlled over a network using one of it's many
-	clients including mpc(console), gmpc(gnome), phpmp(php) etc.
-	this is MPC
+	MPC is MPD client ;-)
 endef
 
 define Build/Configure

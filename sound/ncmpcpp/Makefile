@@ -3,6 +3,8 @@
 # See /LICENSE for more information.
 #
 
+## broken boost lib
+
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=ncmpcpp
