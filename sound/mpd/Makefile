@@ -258,8 +258,8 @@ define Package/mpd/install
 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/bin/mpd $(1)/usr/bin/
 	$(INSTALL_DIR) $(1)/etc
 	$(INSTALL_CONF) $(PKG_BUILD_DIR)/doc/mpdconf.example $(1)/etc/mpd.conf
-	$(INSTALL_DIR) $(1)/etc/init.d
-	$(INSTALL_BIN) ./files/mpd.init $(1)/etc/init.d/mpd
+#	$(INSTALL_DIR) $(1)/etc/init.d
+#	$(INSTALL_BIN) ./files/mpd.init $(1)/etc/init.d/mpd
 endef
 
 define Package/mpd-full/install
