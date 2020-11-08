@@ -28,14 +28,18 @@ define Package/ncmpc
 endef
 
 define Package/ncmpc/description
-	MPC is MPD client ;-)
+	MPC is client for MPD ;-) 
 endef
 
 define Build/Configure
 $(call Build/Configure/Default, \
 	--disable-iconv \
+	--enable-chat-screen \
+	--enable-colors \
+	--disable-nls \
 )
 endef
+
 
 define Build/Compile
 $(call Build/Compile/Default,\
