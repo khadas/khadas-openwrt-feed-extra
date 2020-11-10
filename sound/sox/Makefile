@@ -4,10 +4,13 @@ include $(TOPDIR)/rules.mk
 PKG_NAME:=sox
 PKG_VERSION:=15.5.5
 PKG_VERSION2:=0be259eaa9ce3f3fa587a3ef0cf2c0b9c73167a2
+PKG_VERSION2:=21ac447002cebcf866a5c88ebe02dd15dbb0cd84
 PKG_RELEASE:=5
 
 PKG_HASH:=795e90314462e4b0f028d731c748d52aa95391688a09c5ef9752d1cddb5b8072
+PKG_HASH:=a6c90ad6d5d3ffd3bd3a9e298af3dbd5
 PKG_SOURCE_URL=https://codeload.github.com/mansr/$(PKG_NAME)/tar.gz/$(PKG_VERSION2)?
+PKG_SOURCE_URL=https://codeload.github.com/hyphop/$(PKG_NAME)/tar.gz/$(PKG_VERSION2)?
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION2).tar.gz
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION2)
 
