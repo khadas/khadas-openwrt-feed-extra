@@ -19,6 +19,7 @@
 + spiupdate
 + mpd-custom
 + sox-custom
++ zerofree
 
 ## USAGE
 
