@@ -27,7 +27,7 @@ TARGET_LDFLAGS+= \
 define Package/sox
   SECTION:=sound
   CATEGORY:=Sound
-  DEPENDS:=+libmad +libid3tag +libmagic +libvorbis +alsa-lib +libflac +libopus
+  DEPENDS:=+libmad +libid3tag +libmagic +libvorbis +alsa-lib +libflac +libopus +libopusfile
   TITLE:=Sox is a general purpose sound converter/player/recorder
   URL:=http://sox.sourceforge.net/
 endef
@@ -44,6 +44,7 @@ CONFIGURE_ARGS += \
 		--with-alsa \
 		--without-libltdl \
 		--with-flac \
+		--with-opus \
 		--without-ladspa \
 		--without-png \
 		--without-sndfile \
