@@ -74,7 +74,7 @@ endef
 define Package/mpd-custom
 $(call Package/mpd/Default)
   TITLE+= (custom)
-  DEPENDS+= +libmad +libopus +libvorbis
+  DEPENDS+= +libmad +libopus +libvorbis +libsndfile
   PROVIDES:=mpd
   VARIANT:=custom
 endef
@@ -90,7 +90,7 @@ define Package/mpd-custom/description
 $(call Package/mpd/Default/description)
  .
  This package contains a custom Music Player Daemon, with support for
- only FLAC AAC MP3 OGG OPUS ...
+ only WAV FLAC AAC MP3 OGG OPUS ...
 endef
 
 define Package/mpd-mini/conffiles
@@ -250,6 +250,7 @@ ifeq ($(BUILD_VARIANT),custom)
 	-Dpulse=disabled \
 	-Drecorder=false \
 	-Dshout=disabled \
+	-Dsndfile=enabled \
 	-Dyajl=disabled
 endif
 
