@@ -38,6 +38,9 @@ define Package/pixz
   DEPENDS:=+liblzma +libarchive-custom
 endef
 
+CONFIGURE_ARGS += \
+	--without-manpage
+
 define Package/pixz/install
 	$(INSTALL_DIR) $(1)/usr/bin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/pixz $(1)/usr/bin/pixz
