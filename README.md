@@ -39,7 +39,7 @@ git clone https://github.com/khadas/khadas-openwrt-feed-extra.git
 
 ## related projects
 
-+ https://github.com/krescue/krescue
++ https://github.com/khadas/krescue
 + https://github.com/khadas/khadas-rescue-sdk
 + https://github.com/khadas/khadas-rescue-rootfs
 + https://github.com/khadas/khadas-openwrt-feed-extra
