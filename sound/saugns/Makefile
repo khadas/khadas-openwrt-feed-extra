@@ -6,7 +6,7 @@ PKG_VERSION2:=c175b4a4e979406ac8a2187b69677a3102205553
 PKG_VERSION:=0.1
 PKG_RELEASE:=1
 
-PKG_HASH:=a6c90ad6d5d3ffd3bd3a9e298af3dbd5
+PKG_HASH:=ef29a50b70e46ed14a710c6485b61805
 PKG_SOURCE_URL=https://codeload.github.com/$(PKG_NAME)/$(PKG_NAME)/tar.gz/$(PKG_VERSION2)?
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION2).tar.gz
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION2)
@@ -20,6 +20,7 @@ include $(INCLUDE_DIR)/package.mk
 define Package/saugns
   SECTION:=sound
   CATEGORY:=Sound
+  DEPENDS:=+alsa-lib
   TITLE:=Scriptable AUdio GeNeration System
   URL:=https://github.com/saugns/saugns
 endef
@@ -30,7 +31,7 @@ endef
 
 define Package/saugns/install
 	$(INSTALL_DIR) $(1)/usr/bin
-	$(CP) $(PKG_INSTALL_DIR)/usr/bin/{saugns} $(1)/usr/bin/
+	$(CP) $(PKG_INSTALL_DIR)/usr/local/bin/saugns $(1)/usr/bin/
 endef
 
 $(eval $(call BuildPackage,saugns))
