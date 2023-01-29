@@ -1,4 +1,4 @@
-# 
+#
 # Copyright (C) 2016 OpenWrt.org
 #
 # This is free software, licensed under the GNU General Public License v2.
@@ -8,20 +8,17 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=squashfs-tools
-PKG_VERSION:=4.4
-PKG_RELEASE:=7
-PKG_LICENSE:=GPL-2.0
+PKG_VERSION:=4.5.1
+PKG_RELEASE:=$(AUTORELEASE)
+
+PKG_LICENSE:=GPL-2.0-only
 PKG_LICENSE_FILES:=COPYING
+PKG_MAINTAINER:=Alexandru Ardelean <ardeleanalex@gmail.com>
 PKG_CPE_ID:=cpe:/a:phillip_lougher:squashfs
 
-PKG_SOURCE_PROTO:=git
-PKG_SOURCE_URL:=https://github.com/plougher/squashfs-tools
-PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
-PKG_SOURCE_VERSION:=81e9fe70209406aad4df46985a85ff5ca8a54b11
-
-PKG_MAINTAINER:=hyphop <art@khadas.com>
-
-PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-$(PKG_SOURCE_VERSION).tar.gz
+PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
+PKG_SOURCE_URL:=https://codeload.github.com/plougher/squashfs-tools/tar.gz/${PKG_VERSION}?
+PKG_HASH:=277b6e7f75a4a57f72191295ae62766a10d627a4f5e5f19eadfbc861378deea7
 
 PKG_BUILD_PARALLEL:=1
 include $(INCLUDE_DIR)/package.mk
@@ -30,14 +27,13 @@ define Package/squashfs-tools/Default
   SECTION:=utils
   CATEGORY:=Utilities
   SUBMENU:=Filesystem
-  TITLE:=squashfs-tools
+  TITLE:=Tools to create and extract Squashfs filesystems
   URL:=https://github.com/plougher/squashfs-tools
   DEPENDS += +libpthread +zlib \
 	+SQUASHFS_TOOLS_LZO_SUPPORT:liblzo \
 	+SQUASHFS_TOOLS_LZ4_SUPPORT:liblz4 \
-	+SQUASHFS_TOOLS_ZSTD_SUPPORT:libzstd \
-  	+SQUASHFS_TOOLS_XZ_SUPPORT:liblzma
-  MAINTAINER:=Alexandru Ardelean <ardeleanalex@gmail.com>
+	+SQUASHFS_TOOLS_XZ_SUPPORT:liblzma \
+	+SQUASHFS_TOOLS_ZSTD_SUPPORT:libzstd
 endef
 
 define Package/squashfs-tools-mksquashfs
@@ -87,11 +83,13 @@ endef
 define Package/squashfs-tools-mksquashfs/install
 	$(INSTALL_DIR) $(1)/usr/sbin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/squashfs-tools/mksquashfs $(1)/usr/sbin/mksquashfs
+	$(LN) mksquashfs $(1)/usr/sbin/sqfstar
 endef
 
 define Package/squashfs-tools-unsquashfs/install
 	$(INSTALL_DIR) $(1)/usr/sbin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/squashfs-tools/unsquashfs $(1)/usr/sbin/unsquashfs
+	$(LN) unsquashfs $(1)/usr/sbin/sqfscat
 endef
 
 $(eval $(call BuildPackage,squashfs-tools-mksquashfs))
